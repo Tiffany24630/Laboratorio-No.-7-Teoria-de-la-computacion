@@ -19,9 +19,7 @@ def parse_grammar(lines: list[str]) -> Grammar:
     return Grammar(next(iter(productions)), productions)
 
 def find_nullable(grammar: Grammar) -> set[str]:
-    print("\n" + "=" * 72)
-    print("1. SÍMBOLOS ANULABLES")
-    print("=" * 72)
+    print("\n1. SÍMBOLOS ANULABLES")
 
     nullable: set[str] = set()
 
@@ -69,9 +67,7 @@ def generate_epsilon_variants(rhs: tuple[str, ...], nullable: set[str]) -> list[
     return sorted(variants, key=lambda r: (len(r), r))
 
 def remove_epsilon(grammar: Grammar, nullable: set[str]) -> Grammar:
-    print("\n" + "=" * 72)
-    print("2. ELIMINACIÓN DE PRODUCCIONES ε")
-    print("=" * 72)
+    print("\n2. ELIMINACIÓN DE PRODUCCIONES ε")
 
     result = Grammar(grammar.start)
 
@@ -107,9 +103,7 @@ def remove_epsilon(grammar: Grammar, nullable: set[str]) -> Grammar:
     return result
 
 def remove_unit_productions(grammar: Grammar) -> Grammar:
-    print("\n" + "=" * 72)
-    print("3. ELIMINACIÓN DE PRODUCCIONES UNITARIAS")
-    print("=" * 72)
+    print("\n3. ELIMINACIÓN DE PRODUCCIONES UNITARIAS")
 
     nts = grammar.nonterminals
     closure = {A: {A} for A in nts}
@@ -165,9 +159,7 @@ def find_generating_symbols(grammar: Grammar) -> set[str]:
     return generating
 
 def remove_non_generating(grammar: Grammar) -> Grammar:
-    print("\n" + "=" * 72)
-    print("4. ELIMINACIÓN DE SÍMBOLOS NO PRODUCTORES")
-    print("=" * 72)
+    print("\n4. ELIMINACIÓN DE SÍMBOLOS NO PRODUCTORES")
 
     generating = find_generating_symbols(grammar)
     non_generating = grammar.nonterminals - generating
@@ -206,9 +198,7 @@ def find_reachable(grammar: Grammar) -> set[str]:
     return reachable
 
 def remove_non_reachable(grammar: Grammar) -> Grammar:
-    print("\n" + "=" * 72)
-    print("5. ELIMINACIÓN DE SÍMBOLOS NO ALCANZABLES")
-    print("=" * 72)
+    print("\n5. ELIMINACIÓN DE SÍMBOLOS NO ALCANZABLES")
 
     reachable = find_reachable(grammar)
     unreachable = grammar.nonterminals - reachable

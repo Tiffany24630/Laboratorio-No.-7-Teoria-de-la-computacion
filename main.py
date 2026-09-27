@@ -4,9 +4,7 @@ from simplifier import parse_grammar, find_nullable, remove_epsilon, remove_unit
 from cnf import convert_to_cnf
 from process import process_file
 
-print("=" * 72)
-print("SIMPLIFICADOR DE GRAMÁTICAS LIBRES DE CONTEXTO")
-print("=" * 72)
+print("\nSIMPLIFICADOR DE GRAMÁTICAS LIBRES DE CONTEXTO")
 print("\n1. gramatica1.txt")
 print("2. gramatica2.txt")
 print("3. gramatica3.txt")

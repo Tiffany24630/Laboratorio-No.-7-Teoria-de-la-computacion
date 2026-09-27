@@ -1,9 +1,7 @@
 from grammar import Grammar
 
 def convert_to_cnf(grammar: Grammar) -> Grammar:
-    print("\n" + "=" * 72)
-    print("6. FORMA NORMAL DE CHOMSKY (CNF)")
-    print("=" * 72)
+    print("\n6. FORMA NORMAL DE CHOMSKY (CNF)")
 
     start = grammar.start
     start_in_rhs = any(

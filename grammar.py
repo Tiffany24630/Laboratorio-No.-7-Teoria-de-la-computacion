@@ -23,9 +23,8 @@ class Grammar:
 
     def print_grammar(self, title: str | None = None) -> None:
         if title:
-            print("\n" + "=" * 72)
+            print()
             print(title)
-            print("=" * 72)
 
         for lhs, alternatives in self.productions.items():
             rendered = ["ε" if not rhs else " ".join(rhs) for rhs in alternatives]

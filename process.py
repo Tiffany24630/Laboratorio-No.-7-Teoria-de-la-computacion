@@ -8,9 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent
 def process_file(filename: str) -> None:
     path = BASE_DIR / filename
 
-    print("\n" + "#" * 72)
-    print(f"PROCESANDO: {filename}")
-    print("#" * 72)
+    print(f"\nPROCESANDO: {filename}")
 
     try:
         lines = validate_file(str(path))
@@ -25,11 +23,10 @@ def process_file(filename: str) -> None:
         grammar = remove_non_reachable(grammar)
         grammar = convert_to_cnf(grammar)
 
-        print("\n" + "=" * 72)
-        print("PROCESAMIENTO TERMINADO CORRECTAMENTE")
-        print("=" * 72)
+        print("\nPROCESAMIENTO TERMINADO CORRECTAMENTE")
 
     except FileNotFoundError:
         print(f"ERROR: no se encontró '{path}'.")
+
     except ValueError as exc:
         print(f"ERROR: {exc}")

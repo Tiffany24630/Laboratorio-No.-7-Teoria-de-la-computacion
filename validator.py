@@ -19,9 +19,7 @@ def find_invalid_symbol(line: str) -> str | None:
     return next((ch for ch in line if ch not in allowed), None)
 
 def validate_file(filename: str) -> list[str]:
-    print("\n" + "=" * 72)
-    print("VALIDACIÓN DE GRAMÁTICA")
-    print("=" * 72)
+    print("\nVALIDACIÓN DE GRAMÁTICA")
 
     with open(filename, "r", encoding="utf-8") as file:
         lines = file.readlines()
@@ -48,7 +46,7 @@ def validate_file(filename: str) -> list[str]:
 
             raise ValueError(f"Producción inválida en línea {number}")
 
-        print("  ✓ válida")
+        print("     válida")
         valid_lines.append(line)
 
     if not valid_lines:

@@ -40,3 +40,6 @@ Ejemplo:
 ```text
 S -> 0A0 | 1B1 | BB
 ```
+
+## Video
+Link: https://youtu.be/8FKtH0Jyzn0 
