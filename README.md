@@ -40,19 +40,3 @@ Ejemplo:
 ```text
 S -> 0A0 | 1B1 | BB
 ```
-
-## Prueba de validación
-
-Para demostrar el error durante el video, cambia temporalmente:
-
-```text
-S -> 0A0 | 1B1 | BB
-```
-
-por:
-
-```text
-S -> 0A0 | 1B1 | B@B
-```
-
-El programa debe detenerse indicando que `@` no es válido.
